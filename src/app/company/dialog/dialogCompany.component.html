@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{ company != null ? 'Editar company' : 'nuevo company' }} </h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="businessName">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>CUIT</mat-label>
+        <input matInput [(ngModel)]="taxId">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Tipo</mat-label>
+        <input matInput [(ngModel)]="companyType">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Numero de cuenta</mat-label>
+        <input matInput [(ngModel)]="accountNumber">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Cbu</mat-label>
+        <input matInput [(ngModel)]="cbu">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" 
+    (click)="company != null? editCompany() : addCompany()">Guardar</button>
+</div>
